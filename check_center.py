@@ -28,11 +28,11 @@ mtEpara = 0
 while (phi < 2*np.pi):
     x = r0*np.cos(phi)
     y = r0*np.sin(phi)
-    yval = np.linspace(0, ylen-1, num=ylen)*yin-(ylen*yin/2)
-    xval = np.linspace(0, xlen-1, num=xlen)*xin-(xlen*xin/2)
 #gets the indices of the x and y values that we want.
     xin = round(x/xstep,0) + xlen/2
     yin = round(y/ystep,0) + ylen/2
+    yval = np.linspace(0, ylen-1, num=ylen)*yin-(ylen*yin/2)
+    xval = np.linspace(0, xlen-1, num=xlen)*xin-(xlen*xin/2)
 #more stupid notes: if you have z = Ex[:,1] this grabs you the second COLUMN (y), z = Ex[1] grabs you the first ROW (x), so if you want to get the element in the third column of the second row, you do Ex[1,2]
     Exi = np.abs(Ex[xin, yin])
     Eyi = np.abs(Ey[xin, yin])
